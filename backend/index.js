@@ -6,7 +6,7 @@ const PORT = 3030;
 const app = express();
 
 const todoRoutes = require("./routes/todoRoutes");
-const connectionOptions = { useUnifiedTopology: true, useNewUrlParser: true, useFindAndModify: false };
+const connectionOptions = { useNewUrlParser: true, useUnifiedTopology: true, useCreateIndex: true };
 
 app.use(express.json());
 app.use(cors());
