@@ -23,7 +23,10 @@ h2.ui.header{
 .butons{
     display: flex;
 }
-
+#completedTodo{
+    text-decoration: line-through;
+    color: gray
+}
 
 @media only screen and (max-width: 700px) {
 	    
