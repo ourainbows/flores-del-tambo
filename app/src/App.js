@@ -15,7 +15,6 @@ const App = () => {
       const { data } = await todos.get("/todos");
       setTodoList(data);
     }
-
     fetchData();
   }, []);
 
@@ -42,6 +41,7 @@ const App = () => {
       <Section>
         <Form addTodo={addTodo} />
       </Section>
+
       <Section>
         <List
           editTodoListProp={editTodo}

@@ -25,7 +25,14 @@ const Todo = ({ title, completed, removeTodoItemProp, editTodoItemProp}) => {
     const handleInputOnChange = (e) => {
         setTempValue(e.target.value);
     };
-
+    const handleDeleteClick = () => {
+        setCompleted((oldCompleted) => {
+            const newState = !oldCompleted;
+            editTodoItemProp({ deleted: newState });
+            return newState;
+        });
+    };
+    
     const handleButtonClick = () => {
         setCompleted((oldCompleted) => {
             const newState = !oldCompleted;
@@ -64,7 +71,7 @@ const Todo = ({ title, completed, removeTodoItemProp, editTodoItemProp}) => {
 
                     <div className="column one wide">
                         <button
-                            onClick={removeTodoItemProp}
+                                onClick={handleDeleteClick}
                             className="ui button circular icon red"
                         >
                             <i className="white remove icon"></i>
