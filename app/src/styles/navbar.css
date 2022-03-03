@@ -1,0 +1,73 @@
+@import url('https://fonts.googleapis.com/css2?family=Alex+Brush&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Ruda:wght@600&display=swap');
+
+
+.nav{
+    display: flex;
+    justify-content:space-between;
+    font-size: 35px;
+   
+}
+
+.navbar h1{
+    font-family: 'Alex Brush', cursive;
+    font-size: 40px;
+}
+
+.icons svg{
+    margin: 0px 10px;
+}
+
+.navbar img{
+    max-width: 350px;
+    width:100%
+}
+
+.navbar p{
+    font-size:20px;
+    font-family: 'Ruda', sans-serif;
+   
+}
+
+@media only screen and (max-width: 700px) {
+	    
+    .nav{
+        display: flex;
+        justify-content:space-between;
+        font-size: 35px;
+       
+
+    }.navbar h1{
+        font-size: 35px;
+    }
+
+    .navbar p{
+        font-size:18px;
+               
+    }
+    .navbar img{
+        max-width: 300px;
+        width:100%
+    }
+	}
+    @media only screen and (max-width: 400px) {
+	    
+        .nav{
+            display: flex;
+            justify-content:space-between;
+            font-size: 26px;
+           
+    
+        }.navbar h1{
+            font-size: 26px;
+        }
+    
+        .navbar p{
+            font-size:16px;
+                   
+        }
+        .navbar img{
+            max-width: 200px;
+            width:100%
+        }
+        }

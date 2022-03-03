@@ -1,9 +1,10 @@
 import React, { useState, useEffect } from "react";
 import todos from "./apis";
-
+import "./styles/app.css";
 import Form from "./components/Form";
 import Section from "./components/Section";
 import List from "./components/List";
+import Navbar from "./components/Navbar";
 
 const appTitle = "To-Do App";
 
@@ -33,7 +34,8 @@ const App = () => {
   };
 
   return (
-    <div className="ui container center aligned">
+    <div className="container">
+      <Navbar />
       <Section>
         <h1>{appTitle}</h1>
       </Section>

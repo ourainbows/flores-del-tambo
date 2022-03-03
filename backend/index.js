@@ -16,6 +16,12 @@ const connectionOptions = {
   useNewUrlParser: true,
   useFindAndModify: false,
 };
+// Mongoose 6 always behaves as if  useUnifiedTopology: true, useNewUrlParser: true, useFindAndModify: false
+const connectionOptions = {
+  useUnifiedTopology: true,
+  useNewUrlParser: true,
+  useFindAndModify: false,
+};
 
 // Initialize express and  cross origin request
 app.use(express.json());
