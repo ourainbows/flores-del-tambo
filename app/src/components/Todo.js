@@ -1,5 +1,9 @@
 import React, { useState } from "react";
+<<<<<<< HEAD
 import "../styles/todo.css"
+=======
+import {IoFlowerSharp} from 'react-icons/io5';
+>>>>>>> main
 
 const Todo = ({ title, completed, removeTodoItemProp, editTodoItemProp }) => {
     const [isEditing, setIsEditing] = useState(false);
@@ -10,11 +14,11 @@ const Todo = ({ title, completed, removeTodoItemProp, editTodoItemProp }) => {
     const handleDivDoubleClick = () => {
         setIsEditing(true);
     };
-
+    //Esta constante la usamos para definir la funciones de las teclas al momento de editar
     const handleInputKeyDown = (e) => {
         const key = e.keyCode;
-
-        if(key === 13) {
+    //Si presionamos enter se cambia el valor de el nuevo 
+        if(key === 13 ) {
             editTodoItemProp({ title: tempValue });
             setValue(tempValue);
             setIsEditing(false);
@@ -41,8 +45,10 @@ const Todo = ({ title, completed, removeTodoItemProp, editTodoItemProp }) => {
             {
             isEditing ?
                 <div className="column seven wide">
+                    <i className="certificate icon"></i>
                     <div className="ui input fluid">
-                        <input
+                    
+                      <input 
                             onChange={handleInputOnChange}
                             onKeyDown={handleInputKeyDown}
                             autoFocus={true}
