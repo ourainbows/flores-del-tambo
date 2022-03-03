@@ -6,7 +6,7 @@ import Section from "./components/Section";
 import List from "./components/List";
 import Navbar from "./components/Navbar";
 
-const appTitle = "To-Do App";
+const appTitle = "Lista de tareas";
 
 const App = () => {
     const [todoList, setTodoList] = useState([]);
