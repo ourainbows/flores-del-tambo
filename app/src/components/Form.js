@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 
 
+
 const Form = ({ addTodo }) => {
     //Declaramos el estado de el input
     const [inputValue, setInputValue] = useState("");
@@ -25,7 +26,7 @@ const Form = ({ addTodo }) => {
         // handleFormSubmit para evitar que la informacion se refresque y se pierda
         onSubmit={handleFormSubmit}>
             <div className="ui grid center aligned">
-                <div className="row">
+                <div className="row input-button">
                     <div className="column five wide">
                         <input
                             //Aqui le pasamos los estados al input 

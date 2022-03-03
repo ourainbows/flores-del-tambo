@@ -63,7 +63,7 @@ const Todo = ({ title, completed, removeTodoItemProp, editTodoItemProp }) => {
                     <div className="column five wide" onDoubleClick={handleDivDoubleClick}>
                         <h2 className={"ui header" + (completedState ? " green" : "")}>{value}</h2>
                     </div>
-
+                    <div className="butons">
                     <div className="column one wide">
                         <button
                             className={"ui button circular icon" + (completedState ? " blue" : " green")}
@@ -80,6 +80,7 @@ const Todo = ({ title, completed, removeTodoItemProp, editTodoItemProp }) => {
                         >
                             <i className="white remove icon"></i>
                         </button>
+                    </div>
                     </div>
                 </>
             }
