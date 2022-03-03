@@ -1,9 +1,5 @@
 import React, { useState } from "react";
-<<<<<<< HEAD
 import "../styles/todo.css"
-=======
-import {IoFlowerSharp} from 'react-icons/io5';
->>>>>>> main
 
 const Todo = ({ title, completed, removeTodoItemProp, editTodoItemProp }) => {
     const [isEditing, setIsEditing] = useState(false);
