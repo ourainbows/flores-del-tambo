@@ -14,9 +14,9 @@ const Form = ({ addTodo }) => {
         e.preventDefault();
     //El .trim se usa para borrar espacios en blanco alrededor de el string
         if(inputValue.trim() === "") return;
-    //*
-        addTodo({ title: inputValue, completed: false });
-    // Aca devolvemos el estado de el input a un string vacio    
+
+        addTodo({ title: inputValue, completed: false, deleted: false });
+        // Aca devolvemos el estado de el input a un string vacio    
         setInputValue("");
     };
     
@@ -33,7 +33,7 @@ const Form = ({ addTodo }) => {
                             value={inputValue}
                             onChange={handleInputChange}
                             type="text"
-                            placeholder="Enter something to do..."
+                            placeholder="Ingresa la tarea que debes realizar..."
                         />
                     </div>
                      <div className="column one wide">

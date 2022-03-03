@@ -2,21 +2,23 @@ import React from "react";
 import Todo from "./Todo";
 
 const List = ({ list, removeTodoListProp, editTodoListProp }) => {
-    const renderedList = list.map(
+    const renderedList = list.filter(item => !item.deleted).map(
         (item) => (
             <Todo
                 title={item.title}
                 completed={item.completed}
                 removeTodoItemProp={(e) => removeTodoListProp(item._id)}
                 editTodoItemProp={(updatedItem) => editTodoListProp(item._id, updatedItem)}
-                key={item.title}
+                key={item._id}
             />
         )
     );
     return (
-        <div className="ui grid center aligned">
-            {renderedList}
-        </div>
+        <>
+            <div className="ui grid center aligned">
+                {renderedList}
+            </div>
+        </>
     );
 };
 
