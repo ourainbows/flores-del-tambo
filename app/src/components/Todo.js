@@ -1,11 +1,10 @@
 import React, { useState } from "react";
 
-const Todo = ({ title, completed, removeTodoItemProp, editTodoItemProp }) => {
+const Todo = ({ title, completed, removeTodoItemProp, editTodoItemProp}) => {
     const [isEditing, setIsEditing] = useState(false);
     const [value, setValue] = useState(title);
     const [tempValue, setTempValue] = useState(title);
     const [completedState, setCompleted] = useState(completed);
-
     const handleDivDoubleClick = () => {
         setIsEditing(true);
     };
