@@ -5,7 +5,8 @@ const mongoose = require("mongoose");
 // key name corresponds to the property name in the collection.
 const TodoSchema = new mongoose.Schema({
     title: String,
-    completed: Boolean
+    completed: Boolean,
+    deleted: Boolean
 });
 
 // Exporting the model 
