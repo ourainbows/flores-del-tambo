@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import "../styles/todo.css"
 
-const Todo = ({ title, completed, removeTodoItemProp, editTodoItemProp }) => {
+const Todo = ({ title, completed, removeTodoItemProp, editTodoItemProp, deleted }) => {
     const [isEditing, setIsEditing] = useState(false);
     const [value, setValue] = useState(title);
     const [tempValue, setTempValue] = useState(title);
@@ -27,13 +27,8 @@ const Todo = ({ title, completed, removeTodoItemProp, editTodoItemProp }) => {
     const handleInputOnChange = (e) => {
         setTempValue(e.target.value);
     };
-    const handleDeleteClick = () => {
-        setCompleted((oldCompleted) => {
-            const newState = !oldCompleted;
-            editTodoItemProp({ deleted: newState });
-            return newState;
-        });
-    };
+    const handleDeleteClick = () =>
+        editTodoItemProp({ deleted: !deleted });
 
     const handleButtonClick = () => {
         setCompleted((oldCompleted) => {

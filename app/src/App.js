@@ -17,7 +17,7 @@ const App = () => {
             setTodoList(data);
         }
         fetchData();
-    }, []);
+    },[todoList]);
 
     const addTodo = async (item) => {
         const { data } = await todos.post("/todos", item);

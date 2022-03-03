@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-
+import "../styles/form.css"
 
 
 const Form = ({ addTodo }) => {
@@ -27,7 +27,7 @@ const Form = ({ addTodo }) => {
         onSubmit={handleFormSubmit}>
             <div className="ui grid center aligned">
                 <div className="row input-button">
-                    <div className="column five wide">
+                    <div className="column five wide" id="inputForm">
                         <input
                             //Aqui le pasamos los estados al input 
                             value={inputValue}
@@ -37,7 +37,7 @@ const Form = ({ addTodo }) => {
                         />
                     </div>
                      <div className="column one wide">
-                        <button type="submit" className="ui button circular icon green"><i className="white plus icon"></i></button>
+                        <button type="submit" className="ui button circular icon green"><i className="white plus icon" ></i></button>
                     </div>
                 </div>
             </div>
