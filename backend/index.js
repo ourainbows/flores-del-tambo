@@ -9,13 +9,9 @@ const app = express();
 
 // Import router
 const todoRoutes = require("./routes/todoRoutes");
-<<<<<<< HEAD
 
 // Mongoose 6 always behaves as if  useUnifiedTopology: true, useNewUrlParser: true, useFindAndModify: false 
 const connectionOptions = { useUnifiedTopology: true, useNewUrlParser: true, useFindAndModify: false };
-=======
-const connectionOptions = { useNewUrlParser: true, useUnifiedTopology: true, useCreateIndex: true };
->>>>>>> origin/dev-frontend
 
 // Initialize express and  cross origin request
 app.use(express.json());
