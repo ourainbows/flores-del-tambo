@@ -32,7 +32,7 @@ const Form = ({ addTodo }) => {
                             value={inputValue}
                             onChange={handleInputChange}
                             type="text"
-                            placeholder="Enter something to do..."
+                            placeholder="Ingresa la tarea que debes realizar..."
                         />
                     </div>
                      <div className="column one wide">
