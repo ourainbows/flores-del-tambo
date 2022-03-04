@@ -35,7 +35,10 @@ const App = () => {
     await todos.put(`/todos/${id}`, item);
   };
 
-  // Validations for capitalization and diacritical accents
+  /* 
+  Filter the list depending on what the user types
+  Validations for capitalization and diacritical accents 
+  */
   const filteredTasks = todoList.filter((item) => {
     return item.title
       .toLowerCase()

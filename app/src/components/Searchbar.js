@@ -6,7 +6,7 @@ export const Searchbar = (props) => {
   const handleSubmit = (e) => {
     e.preventDefault();
     onChange(task);
-    setTask(""); // After clicking, erase everything from the input text
+    setTask("");
   };
   return (
     <>
