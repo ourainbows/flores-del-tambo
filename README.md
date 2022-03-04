@@ -8,9 +8,9 @@ Users can also view the tasks they have completed and those they have deleted in
 
 ## To do list
 
-![To do app](./app/src/assets/Logoflor.png "To do App flores del Tambo")
+![To do app](./client/src/assets/Logoflor.png "To do App flores del Tambo")
 
-[Live Demo](https://markdownlivepreview.com/)
+[Live Demo](https://mern-flores-tambo.herokuapp.com/)
 
 ## Front-End Installation
 
