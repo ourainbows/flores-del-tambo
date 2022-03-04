@@ -4,8 +4,9 @@ import "../styles/modal.css"
 import { IoMdFlower } from "react-icons/io"
 import { IoIosClose } from "react-icons/io"
 
-export const Modal = ({ title, list, status, setOpenModal }) => {
-  const filter = list.filter(item => item[status])
+export const Modal= ({title, list, status, setOpenModal}) => {
+  // Filter items according to the status (completed or deleted)
+    const filter=  list.filter(item => item[status])
   return (
     <div className='modal'>
       <div className='containerModal'>
