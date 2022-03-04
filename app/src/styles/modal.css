@@ -1,0 +1,58 @@
+.modal {
+    position: fixed;
+    background-color: rgba(32, 35, 41, 0.8);
+    top: -10px;
+    left: -10px;
+    right: -10px;
+    bottom: -10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    z-index: 2;
+  }
+  
+  .containerModal {
+    height: 30rem;
+    width: 80%;
+    background-color: white;
+    border-radius: 5px;
+    position: relative;
+    overflow-y: scroll;
+  }
+  .title {
+    height: 20%;
+    display: flex;
+    align-items: center;
+    color: var(white);
+    justify-content: center;
+    background-color: #470a28;
+    border-radius: 5px 5px 0 0;
+    font-size: 1.3rem;
+}
+
+.close {
+    top: -5px;
+    right: -5px;
+    border: none;
+    background: none;
+    color: var(--text-white);
+    font-size: 3rem;
+    position: absolute;
+    cursor: pointer;
+  }
+
+  .iconColor {
+      color: darkred;
+  }
+  
+  .modalFilter {
+    
+  }
+
+  .modalFilter p {
+      text-align: left;
+  }
+
+
+  
