@@ -35,7 +35,7 @@ const App = () => {
 
     return (
         <div className="container">
-            <Navbar/>
+            <Navbar list={todoList}/>
             <Section>
                 <h1>{appTitle}</h1>
             </Section>
