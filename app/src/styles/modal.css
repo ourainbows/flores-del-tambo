@@ -15,44 +15,58 @@
   .containerModal {
     height: 30rem;
     width: 80%;
-    background-color: white;
+    background-image: url(../assets/fondom.jpg);
     border-radius: 5px;
     position: relative;
     overflow-y: scroll;
+       
   }
-  .title {
+  #title {
     height: 20%;
     display: flex;
     align-items: center;
-    color: var(white);
     justify-content: center;
-    background-color: #470a28;
+    background-image: url(../assets/fondom.jpg);
     border-radius: 5px 5px 0 0;
-    font-size: 1.3rem;
+    font-size: 2rem;
+    font-family: 'Ruda', sans-serif;
 }
 
 .close {
-    top: -5px;
-    right: -5px;
+    top: -2px;
+    right: -2px;
     border: none;
     background: none;
-    color: var(--text-white);
+    color:#000000;
     font-size: 3rem;
     position: absolute;
     cursor: pointer;
   }
 
-  .iconColor {
-      color: darkred;
+  .iconColor-deleted {
+      color: #D80000;
+      margin-bottom:-4px;
   }
+
+  .iconColor-completed {
+    color: #0FA958;
+    margin-bottom:-4px;
+}
   
-  .modalFilter {
+  .modalFil {
+    text-align: center;
+    display:flex;
+    margin: auto;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     
   }
 
   .modalFilter p {
-      text-align: left;
+     text-align: left;
+     align-items: center;
   }
 
-
+ 
   

@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import "../styles/todo.css"
+import {IoMdFlower} from "react-icons/io"
 
 const Todo = ({ title, completed, removeTodoItemProp, editTodoItemProp, deleted }) => {
     const [isEditing, setIsEditing] = useState(false);
@@ -55,11 +56,11 @@ const Todo = ({ title, completed, removeTodoItemProp, editTodoItemProp, deleted 
                         </div>
                     </div> :
                     <>
-                        <div className="column five wide" onDoubleClick={handleDivDoubleClick}>
+                        <div className="column five wide " onDoubleClick={handleDivDoubleClick}>
                             <h2
                                 className={"ui header"}
                                 id={completedState ? "completedTodo" : ""}
-                            >
+                            > <IoMdFlower className="prueba" id="flower-list"/> 
                                 {value}
                             </h2>
                         </div>
