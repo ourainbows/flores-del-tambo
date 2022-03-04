@@ -5,7 +5,7 @@ import "../styles/form.css"
 const Form = ({ addTodo }) => {
     //Declaramos el estado de el input
     const [inputValue, setInputValue] = useState("");
-    //Esta constante se usa para modificar el state
+    //Esta constante se usa para modificar el state y guardar la info nueva 
     const handleInputChange = (e) => {
         setInputValue(e.target.value);
     };

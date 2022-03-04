@@ -5,6 +5,12 @@ import "../styles/navbar.css";
 import logo from "../assets/Logoflor.png";
 import { Modal } from "./Modal.js";
 import { Searchbar } from "./Searchbar";
+
+
+
+
+
+
 const Navbar = ({ list, task, setTask }) => {
   const [openModal, setOpenModal] = useState(false);
   const [modalInfo, setModalInfo] = useState({ title: "", status: "" });
@@ -16,10 +22,8 @@ const Navbar = ({ list, task, setTask }) => {
     <div className="navbar">
       <div className="nav">
         <h1>Flores del Tambo</h1>
-        <div>
+         <div className="icons">
           <Searchbar task={task} setTask={setTask} />
-        </div>
-        <div className="icons">
           <BsListCheck
             onClick={() => handleModal("Tareas Completadas", "completed")}
           />
