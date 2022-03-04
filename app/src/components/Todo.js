@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import "../styles/todo.css"
 
-const Todo = ({ title, completed, removeTodoItemProp, editTodoItemProp }) => {
+const Todo = ({ title, completed, removeTodoItemProp, editTodoItemProp, deleted }) => {
     const [isEditing, setIsEditing] = useState(false);
     const [value, setValue] = useState(title);
     const [tempValue, setTempValue] = useState(title);
@@ -13,12 +13,12 @@ const Todo = ({ title, completed, removeTodoItemProp, editTodoItemProp }) => {
     //Esta constante la usamos para definir la funciones de las teclas al momento de editar
     const handleInputKeyDown = (e) => {
         const key = e.keyCode;
-    //Si presionamos enter se cambia el valor de el nuevo 
-        if(key === 13 ) {
+        //Si presionamos enter se cambia el valor de el nuevo 
+        if (key === 13) {
             editTodoItemProp({ title: tempValue });
             setValue(tempValue);
             setIsEditing(false);
-        } else if(key === 27) {
+        } else if (key === 27) {
             setTempValue(value);
             setIsEditing(false);
         }
@@ -27,14 +27,9 @@ const Todo = ({ title, completed, removeTodoItemProp, editTodoItemProp }) => {
     const handleInputOnChange = (e) => {
         setTempValue(e.target.value);
     };
-    const handleDeleteClick = () => {
-        setCompleted((oldCompleted) => {
-            const newState = !oldCompleted;
-            editTodoItemProp({ deleted: newState });
-            return newState;
-        });
-    };
-    
+    const handleDeleteClick = () =>
+        editTodoItemProp({ deleted: !deleted });
+
     const handleButtonClick = () => {
         setCompleted((oldCompleted) => {
             const newState = !oldCompleted;
@@ -46,43 +41,48 @@ const Todo = ({ title, completed, removeTodoItemProp, editTodoItemProp }) => {
     return (
         <div className="row">
             {
-            isEditing ?
-                <div className="column seven wide">
-                    <i className="certificate icon"></i>
-                    <div className="ui input fluid">
-                    
-                      <input 
-                            onChange={handleInputOnChange}
-                            onKeyDown={handleInputKeyDown}
-                            autoFocus={true}
-                            value={tempValue}
-                        />
-                    </div>
-                </div> :
-                <>
-                    <div className="column five wide" onDoubleClick={handleDivDoubleClick}>
-                        <h2 className={"ui header" + (completedState ? " green" : "")}>{value}</h2>
-                    </div>
-                    <div className="butons">
-                    <div className="column one wide">
-                        <button
-                            className={"ui button circular icon" + (completedState ? " blue" : " green")}
-                            onClick={handleButtonClick}
-                        >
-                            <i className="white check icon"></i>
-                        </button>
-                    </div>
+                isEditing ?
+                    <div className="column seven wide">
+                        <i className="certificate icon"></i>
+                        <div className="ui input fluid">
 
-                    <div className="column one wide">
-                        <button
-                                onClick={handleDeleteClick}
-                            className="ui button circular icon red"
-                        >
-                            <i className="white remove icon"></i>
-                        </button>
-                    </div>
-                    </div>
-                </>
+                            <input
+                                onChange={handleInputOnChange}
+                                onKeyDown={handleInputKeyDown}
+                                autoFocus={true}
+                                value={tempValue}
+                            />
+                        </div>
+                    </div> :
+                    <>
+                        <div className="column five wide" onDoubleClick={handleDivDoubleClick}>
+                            <h2
+                                className={"ui header"}
+                                id={completedState ? "completedTodo" : ""}
+                            >
+                                {value}
+                            </h2>
+                        </div>
+                        <div className="butons">
+                            <div className="column one wide">
+                                <button
+                                    className={"ui button circular icon" + (completedState ? " blue" : " green")}
+                                    onClick={handleButtonClick}
+                                >
+                                    <i className="white check icon"></i>
+                                </button>
+                            </div>
+
+                            <div className="column one wide">
+                                <button
+                                    onClick={handleDeleteClick}
+                                    className="ui button circular icon red"
+                                >
+                                    <i className="white remove icon"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </>
             }
         </div>
     );
