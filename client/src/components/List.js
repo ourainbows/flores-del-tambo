@@ -2,6 +2,8 @@ import React from "react";
 import Todo from "./Todo";
 
 const List = ({ list, removeTodoListProp, editTodoListProp }) => {
+  // Display only the tasks that are not deleted
+
   const renderedList = list
     .filter((item) => !item.deleted)
     .map((item) => (

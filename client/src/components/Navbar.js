@@ -23,11 +23,8 @@ const Navbar = ({ list, task, setTask }) => {
     <div className="navbar">
       <div className="nav">
         <h1>Flores del Tambo</h1>
-        <div>
-        {/* Props from app to handle the value the user types */} 
+         <div className="icons">
           <Searchbar task={task} setTask={setTask} />
-        </div>
-        <div className="icons">
           <BsListCheck
             onClick={() => handleModal("Tareas Completadas", "completed")}
           />

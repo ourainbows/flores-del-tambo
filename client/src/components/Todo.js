@@ -4,27 +4,33 @@ import {IoMdFlower} from "react-icons/io"
 
 const Todo = ({ title, completed, removeTodoItemProp, editTodoItemProp, deleted }) => {
     const [isEditing, setIsEditing] = useState(false);
+     // Here we destruct in title defining it as the initial state in the following two constants
     const [value, setValue] = useState(title);
     const [tempValue, setTempValue] = useState(title);
     const [completedState, setCompleted] = useState(completed);
+     
 
+    //  // handleDivDoubleClick is used to change the state to true and let it edit the task
     const handleDivDoubleClick = () => {
         setIsEditing(true);
     };
-    //Esta constante la usamos para definir la funciones de las teclas al momento de editar
+   //This constant is used to define the functions of the keys when editing
     const handleInputKeyDown = (e) => {
         const key = e.keyCode;
-        //Si presionamos enter se cambia el valor de el nuevo 
+     
         if (key === 13) {
             editTodoItemProp({ title: tempValue });
             setValue(tempValue);
             setIsEditing(false);
+        //In case we do not want to save the changes, we press esc so that the original title remains
         } else if (key === 27) {
             setTempValue(value);
             setIsEditing(false);
+
+     //We use the state in false so that pressing any of the keys after saving the changes stops editing
         }
     };
-
+    //create an event that modifies the state
     const handleInputOnChange = (e) => {
         setTempValue(e.target.value);
     };
@@ -41,6 +47,7 @@ const Todo = ({ title, completed, removeTodoItemProp, editTodoItemProp, deleted 
 
     return (
         <div className="row">
+       {/* Here we use a ternary operator, we say, if you are editing, use the functions of the keys and thus be able to change or not the title of the task */}
             {
                 isEditing ?
                     <div className="column seven wide">
@@ -55,6 +62,8 @@ const Todo = ({ title, completed, removeTodoItemProp, editTodoItemProp, deleted 
                             />
                         </div>
                     </div> :
+
+                  //And if not, just display the task with the completed or deleted buttons
                     <>
                         <div className="column five wide " onDoubleClick={handleDivDoubleClick}>
                             <h2

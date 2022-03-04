@@ -9,7 +9,7 @@ export const Searchbar = ({onChange, task, setTask}) => {
   return (
     <>
       <form onSubmit={handleSubmit}>
-        <input
+        <input id="Search"
           type="text"
           placeholder="Buscar tarea..."
           value={task}

@@ -7,6 +7,6 @@ const Section = ({ children }) => {
         </div>
     );
 }; 
-//Usamos los children para pasar las propiedades de el return como un componente
+//We use the children to pass the properties of the return as a component
 
 export default Section;
