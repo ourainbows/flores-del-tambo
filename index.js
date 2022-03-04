@@ -31,6 +31,10 @@ console.log(`NODE_ENV=${config.NODE_ENV}`)
 
 app.use(express.static(path.join(__dirname, "client", "build")))
 
+app.get("*", (req, res) => {
+    res.sendFile(path.join(__dirname, "client", "build", "index.html"));
+});
+
 app.listen(config.PORT, () => {
     console.log(`The server is listening on port: ${config.PORT}`);
 });
