@@ -4,8 +4,8 @@ import { MdDelete } from "react-icons/md";
 import "../styles/navbar.css";
 import logo from "../assets/Logoflor.png";
 import { Modal } from "./Modal.js";
-
-const Navbar = ({ list }) => {
+import { Searchbar } from "./Searchbar";
+const Navbar = ({ list, task, setTask }) => {
   const [openModal, setOpenModal] = useState(false);
   const [modalInfo, setModalInfo] = useState({ title: "", status: "" });
   const handleModal = (statusTitle, statusClick) => {
@@ -16,6 +16,9 @@ const Navbar = ({ list }) => {
     <div className="navbar">
       <div className="nav">
         <h1>Flores del Tambo</h1>
+        <div>
+          <Searchbar task={task} setTask={setTask} />
+        </div>
         <div className="icons">
           <BsListCheck
             onClick={() => handleModal("Tareas Completadas", "completed")}
