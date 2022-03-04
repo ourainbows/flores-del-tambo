@@ -9,10 +9,13 @@ import Navbar from "./components/Navbar";
 const appTitle = "Lista de tareas";
 
 const App = () => {
+  // Handle list to render
   const [todoList, setTodoList] = useState([]);
-
+// Handle filtered list to render 
   const [task, setTask] = useState("");
 
+
+  // Get data from api
   useEffect(() => {
     async function fetchData() {
       const { data } = await todos.get("/todos");
@@ -21,22 +24,25 @@ const App = () => {
     fetchData();
   }, [todoList]);
 
+  // Add new items 
   const addTodo = async (item) => {
     const { data } = await todos.post("/todos", item);
     setTodoList((oldList) => [...oldList, data]);
   };
 
+  // Remove item depending on its id
   const removeTodo = async (id) => {
     await todos.delete(`/todos/${id}`);
     setTodoList((oldList) => oldList.filter((item) => item._id !== id));
   };
 
+    // Edit item depending on its id and the information to be updated 
   const editTodo = async (id, item) => {
     await todos.put(`/todos/${id}`, item);
   };
 
   /* 
-  Filter the list depending on what the user types
+  Filter list depending on what the user types
   Validations for capitalization and diacritical accents 
   */
   const filteredTasks = todoList.filter((item) => {
@@ -54,7 +60,8 @@ const App = () => {
 
   return (
     <div className="container">
-      <Navbar list={todoList} task={task} setTask={setTask} />
+    
+      <Navbar list={todoList} task={task} setTask={setTask}       />
       <Section>
         <h1>{appTitle}</h1>
       </Section>
@@ -67,7 +74,8 @@ const App = () => {
         <List
           editTodoListProp={editTodo}
           removeTodoListProp={removeTodo}
-          list={task ? filteredTasks : todoList}
+          list={task ? filteredTasks : todoList} 
+          //If user types something on searchbar pass filtered items, otherwise pass full list
         />
       </Section>
     </div>

@@ -1,39 +1,39 @@
 import React, { useState } from "react";
 import "../styles/todo.css"
+import {IoMdFlower} from "react-icons/io"
 
 const Todo = ({ title, completed, removeTodoItemProp, editTodoItemProp, deleted }) => {
     const [isEditing, setIsEditing] = useState(false);
-     // Aqui desestructuamos en title definiendolo como el estado inicial en las siguientes dos constantes 
+     // Here we destruct in title defining it as the initial state in the following two constants
     const [value, setValue] = useState(title);
     const [tempValue, setTempValue] = useState(title);
     const [completedState, setCompleted] = useState(completed);
      
 
-    //  handleDivDoubleClick se usa para cambia el estado a true y asi dejar que edite la tarea
+    //  // handleDivDoubleClick is used to change the state to true and let it edit the task
     const handleDivDoubleClick = () => {
         setIsEditing(true);
     };
-    //Esta constante la usamos para definir la funciones de las teclas al momento de editar
+   //This constant is used to define the functions of the keys when editing
     const handleInputKeyDown = (e) => {
         const key = e.keyCode;
-        //Si reescribimos la tarea y presionamos la tecla enter se cambia el titulo viejo (setValue) por el nuevo (tempValue)
+     
         if (key === 13) {
             editTodoItemProp({ title: tempValue });
             setValue(tempValue);
             setIsEditing(false);
-        //En tal caso de que no queramos guardar los cambios presionamos esc para que quede el titulo originial 
+        //In case we do not want to save the changes, we press esc so that the original title remains
         } else if (key === 27) {
             setTempValue(value);
             setIsEditing(false);
 
-     //Usamos el estado en false para que al presionar cualquiera de las teclas despues de guaradrse los cambios se deje de editar
+     //We use the state in false so that pressing any of the keys after saving the changes stops editing
         }
     };
-    //creamos un evento que modifica el state
+    //create an event that modifies the state
     const handleInputOnChange = (e) => {
         setTempValue(e.target.value);
     };
-   //
     const handleDeleteClick = () =>
         editTodoItemProp({ deleted: !deleted });
 
@@ -47,7 +47,7 @@ const Todo = ({ title, completed, removeTodoItemProp, editTodoItemProp, deleted 
 
     return (
         <div className="row">
-        {/* Aca usamos un operador ternario, le decimos, si esta editando use las funciones de las teclas y asi poder cambiar o no el titulo de la tarea */}
+       {/* Here we use a ternary operator, we say, if you are editing, use the functions of the keys and thus be able to change or not the title of the task */}
             {
                 isEditing ?
                     <div className="column seven wide">
@@ -63,13 +63,13 @@ const Todo = ({ title, completed, removeTodoItemProp, editTodoItemProp, deleted 
                         </div>
                     </div> :
 
-                    //Y si no, simplemente muestre la tarea con los botones de completado o eliminado
+                  //And if not, just display the task with the completed or deleted buttons
                     <>
-                        <div className="column five wide" onDoubleClick={handleDivDoubleClick}>
+                        <div className="column five wide " onDoubleClick={handleDivDoubleClick}>
                             <h2
                                 className={"ui header"}
                                 id={completedState ? "completedTodo" : ""}
-                            >
+                            > <IoMdFlower className="prueba" id="flower-list"/> 
                                 {value}
                             </h2>
                         </div>

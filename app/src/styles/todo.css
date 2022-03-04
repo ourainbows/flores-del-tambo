@@ -28,6 +28,18 @@ h2.ui.header{
     color: gray
 }
 
+#flower-list{
+    color: #831AEE;
+    font-size: 35px;
+    margin-bottom:-8px;
+    margin-right: 10px;
+}
+
+.prueba{
+    
+    align-items: center;
+}
+
 @media only screen and (max-width: 700px) {
 	    
    
