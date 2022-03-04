@@ -3,6 +3,7 @@ const express = require("express");
 const mongoose = require("mongoose"); // for creating mongoose model (schema)
 const cors = require("cors"); // enable cross origin request
 const config = require("./config")
+const path = require("path")
 
 // Initialize app
 const app = express();
