@@ -17,11 +17,19 @@ const Navbar = ({ list }) => {
       <div className="nav">
         <h1>Flores del Tambo</h1>
         <div className="icons">
-          <BsListCheck />
-          <MdDelete />
+          <BsListCheck
+            onClick={() => handleModal("Tareas Completadas", "completed")}
+          />
+          <MdDelete
+            onClick={() => handleModal("Tareas Eliminadas", "deleted")}
+          />
         </div>
       </div>
       <img src={logo} alt={logo} />
+      <p>
+        El éxito es la suma de pequeños esfuerzos repetidos un día sí y otro
+        también.{" "}
+      </p>
       {openModal ? (
         <Modal
           setOpenModal={setOpenModal}
