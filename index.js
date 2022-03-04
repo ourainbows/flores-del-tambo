@@ -28,6 +28,10 @@ app.use("/todos", todoRoutes);
 
 console.log(`NODE_ENV=${config.NODE_ENV}`)
 
+if (config.NODE_ENV === "production") {
+    app.use(express.static("client/build"))
+}
+
 app.listen(config.PORT, () => {
     console.log(`The server is listening on port: ${config.PORT}`);
 });
