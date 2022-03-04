@@ -10,6 +10,7 @@ const appTitle = "Lista de tareas";
 
 const App = () => {
   const [todoList, setTodoList] = useState([]);
+
   const [task, setTask] = useState("");
 
   useEffect(() => {
@@ -33,6 +34,8 @@ const App = () => {
   const editTodo = async (id, item) => {
     await todos.put(`/todos/${id}`, item);
   };
+
+  // Validations for capitalization and diacritical accents
   const filteredTasks = todoList.filter((item) => {
     return item.title
       .toLowerCase()
