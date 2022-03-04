@@ -5,6 +5,8 @@ import "../styles/navbar.css";
 import logo from "../assets/Logoflor.png";
 import { Modal } from "./Modal.js";
 import { Searchbar } from "./Searchbar";
+
+
 const Navbar = ({ list, task, setTask }) => {
   const [openModal, setOpenModal] = useState(false);
   const [modalInfo, setModalInfo] = useState({ title: "", status: "" });

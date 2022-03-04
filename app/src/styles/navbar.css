@@ -23,6 +23,7 @@
 
 .icons svg{
     margin: 0px 10px;
+    cursor: pointer;
 }
 
 .navbar img{
