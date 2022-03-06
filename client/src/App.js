@@ -11,9 +11,8 @@ const appTitle = "Lista de tareas";
 const App = () => {
   // Handle list to render
   const [todoList, setTodoList] = useState([]);
-// Handle filtered list to render 
+  // Handle filtered list to render
   const [task, setTask] = useState("");
-
 
   // Get data from api
   useEffect(() => {
@@ -24,7 +23,7 @@ const App = () => {
     fetchData();
   }, [todoList]);
 
-  // Add new items 
+  // Add new items
   const addTodo = async (item) => {
     const { data } = await todos.post("/todos", item);
     setTodoList((oldList) => [...oldList, data]);
@@ -36,7 +35,7 @@ const App = () => {
     setTodoList((oldList) => oldList.filter((item) => item._id !== id));
   };
 
-    // Edit item depending on its id and the information to be updated 
+  // Edit item depending on its id and the information to be updated
   const editTodo = async (id, item) => {
     await todos.put(`/todos/${id}`, item);
   };
@@ -60,8 +59,12 @@ const App = () => {
 
   return (
     <div className="container">
-    
-      <Navbar list={todoList} task={task} setTask={setTask}       />
+      <Navbar
+        list={todoList}
+        task={task}
+        setTask={setTask}
+        removeTodoListProp={removeTodo}
+      />
       <Section>
         <h1>{appTitle}</h1>
       </Section>
@@ -74,7 +77,7 @@ const App = () => {
         <List
           editTodoListProp={editTodo}
           removeTodoListProp={removeTodo}
-          list={task ? filteredTasks : todoList} 
+          list={task ? filteredTasks : todoList}
           //If user types something on searchbar pass filtered items, otherwise pass full list
         />
       </Section>
