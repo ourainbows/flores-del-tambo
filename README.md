@@ -12,19 +12,12 @@ Users can also view the tasks they have completed and those they have deleted in
 
 [Live Demo](https://mern-flores-tambo.herokuapp.com/)
 
-## Front-End Installation
 
-1. `cd app`
+## Installation
+
+1. `cd client`
 2. `npm install`
 3. `npm start`
-
-## Back-End Installation
-
-1. `cd backend`
-2. `npm install`
-3. `npm install --save express`
-4. `npm install --save mongoose`
-5. `node index`
 
 ## Team
 

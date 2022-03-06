@@ -66,7 +66,7 @@ const Todo = ({
         </div>
       ) : (
         //And if not, just display the task with the completed or deleted buttons
-        <>
+        <div className="todoItem">
           <div
             className="wide mobile six wide computer twelve wide tablet column "
             onDoubleClick={handleDivDoubleClick}
@@ -103,7 +103,7 @@ const Todo = ({
               </button>
             </div>
           </div>
-        </>
+        </div>
       )}
     </div>
   );
