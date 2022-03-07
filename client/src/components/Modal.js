@@ -32,8 +32,10 @@ export const Modal = ({
           </h2>
         </div>
         <div className="modalFil">
-          {status === "deleted" && list.find((item) => item.deleted) ? (
+          {status === "deleted"  && list.find((item) => item.deleted) ? (
             <p>Al dar click en la x, la tarea será eliminada permanentemente</p>
+           ): status === "completed"  && list.find((item) => item.completed ) ? (
+            <p>Al dar click en la x, la tarea será eliminada permanentemente</p> 
           ) : status === "deleted" && !list.find((item) => item.deleted) ? (
             <p>No hay tareas eliminadas</p>
           ) : status === "completed" && !list.find((item) => item.completed) ? (
@@ -44,7 +46,7 @@ export const Modal = ({
               <div
                 key={index}
                 className={
-                  status === "deleted"
+                  status === "deleted" || status === "completed"
                     ? "modalTodo modalTodo--grid"
                     : "modalTodo"
                 }
@@ -53,7 +55,7 @@ export const Modal = ({
                   <span>
                     <IoMdFlower
                       className={
-                        status === "deleted"
+                        status === "deleted" 
                           ? "iconColor-deleted"
                           : "iconColor-completed"
                       }
@@ -61,7 +63,7 @@ export const Modal = ({
                   </span>
                   {item.title}
                 </h3>
-                {status === "deleted" ? (
+                {status === "deleted" || status === "completed" ? (
                   <button
                     className="ui button circular icon black"
                     onClick={() => removeTodoListProp(item._id)}

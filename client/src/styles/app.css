@@ -7,5 +7,10 @@
   min-height: 1000px;
   height: 100%;
   text-align: center;
-  padding: 20px 10px;
+  padding: 55px 10px;
+}
+
+.footer {
+  margin-top: 500px;
+  margin-bottom: -40px
 }

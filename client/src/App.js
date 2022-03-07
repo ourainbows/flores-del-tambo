@@ -81,6 +81,9 @@ const App = () => {
           //If user types something on searchbar pass filtered items, otherwise pass full list
         />
       </Section>
+      <footer className="footer">
+      <h4> © 2022 FLORES DEL TAMBO </h4>
+      </footer>
     </div>
   );
 };
